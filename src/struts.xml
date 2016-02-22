@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "struts-2.1.dtd" >
+<struts>
+
+	<constant name="struts.ui.theme" value="simple" />
+
+	<package name="default" namespace="/" extends="struts-default">
+	<default-action-ref name="defaultAction"/>
+
+		<action name="user" class="cn.hp.house.action.UserAction">
+			<result name="success" type="redirect">/house!getAllHouse</result>
+			<result name="login">/page/login_struts2.jsp</result>
+			<result name="input">/page/login_struts2.jsp</result>
+		</action>
+
+		<action name="user1" class="cn.hp.house.action.UserAction">
+			<result name="success">/page/success.jsp</result>
+			<result name="error">/page/register.jsp</result>
+			<result name="input">/page/register.jsp</result>
+		</action>
+
+       <action name="house" class="cn.hp.house.action.HouseAction">
+			<result name="success">/page/house_list.jsp</result>
+			<result name="error">/page/house_list.jsp</result>
+			<result name="show">/page/show.jsp</result>
+			<result name="input">/page/register.jsp</result>
+		</action>
+
+	</package>
+
+</struts>
